@@ -38,7 +38,8 @@ def main():
         print(__doc__)
         sys.exit(1)
     for name, seq in read_fasta(sys.argv[1]):
-        print(f"{name}\tlength = {len(seq)}\tGC={100 * gc_content(seq):.1f}%")
+        gc = 100*gc_content(seq)
+        print(f"{name}\tlength = {len(seq)}\tGC= {gc:.1f}%\tAT={100 -gc:.1f}%")
 
 
 if __name__ == "__main__":
